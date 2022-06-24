@@ -1,0 +1,15 @@
+{
+  "name": "ethers-token",
+  "version": "0.0.0",
+  "description": "A token util for ethers",
+  "author": "Cyan Ho <pilagooood@gmail.com>",
+  "homepage": "https://github.com/pilagod/ethers-token",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pilagod/ethers-token"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT"
+}
