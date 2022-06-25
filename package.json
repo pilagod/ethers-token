@@ -1,35 +1,37 @@
 {
-  "name": "ethers-token",
-  "version": "0.0.0",
-  "description": "A token util for ethers",
-  "author": "Cyan Ho <pilagooood@gmail.com>",
-  "homepage": "https://github.com/pilagod/ethers-token",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/pilagod/ethers-token"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "license": "MIT",
-  "devDependencies": {
-    "@tsconfig/recommended": "^1.0.1",
-    "@types/chai": "^4.3.1",
-    "@types/mocha": "^9.1.1",
-    "@types/node": "^18.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.29.0",
-    "@typescript-eslint/parser": "^5.29.0",
-    "chai": "^4.3.6",
-    "dotenv": "^16.0.1",
-    "eslint": "^8.18.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "ethers": "^5.6.9",
-    "hardhat": "^2.9.9",
-    "hardhat-ethers": "^1.0.1",
-    "prettier": "^2.7.1",
-    "ts-node": "^10.8.1",
-    "tsconfig-paths": "^4.0.0",
-    "typescript": "^4.7.4"
-  }
+    "name": "ethers-token",
+    "version": "0.0.0",
+    "description": "A token util for ethers",
+    "author": "Cyan Ho <pilagooood@gmail.com>",
+    "homepage": "https://github.com/pilagod/ethers-token",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/pilagod/ethers-token"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "@nomiclabs/hardhat-ethers": "^2.0.6",
+        "@nomiclabs/hardhat-waffle": "^2.0.3",
+        "@tsconfig/recommended": "^1.0.1",
+        "@types/chai": "^4.3.1",
+        "@types/mocha": "^9.1.1",
+        "@types/node": "^18.0.0",
+        "@typescript-eslint/eslint-plugin": "^5.29.0",
+        "@typescript-eslint/parser": "^5.29.0",
+        "chai": "^4.3.6",
+        "dotenv": "^16.0.1",
+        "eslint": "^8.18.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "ethereum-waffle": "^3.4.4",
+        "ethers": "^5.6.9",
+        "hardhat": "^2.9.9",
+        "prettier": "^2.7.1",
+        "ts-node": "^10.8.1",
+        "tsconfig-paths": "^4.0.0",
+        "typescript": "^4.7.4"
+    }
 }
