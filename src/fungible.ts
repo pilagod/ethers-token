@@ -10,7 +10,7 @@ export type FungibleConfig = {
 
 export class Fungible extends BigNumber {
     public static decimals = 18
-    public static symbol = "FGBTKN"
+    public static symbol = "TKN"
 
     private owner?: Owner
 
@@ -42,29 +42,29 @@ export class Fungible extends BigNumber {
     /* big number */
 
     public add(value: BigNumberish): this {
-        return this.wrap(super.add(value), { ignoreDecimals: true })
+        return this.wrapRaw(super.add(value))
     }
 
     public sub(value: BigNumberish): this {
-        return this.wrap(super.sub(value), { ignoreDecimals: true })
+        return this.wrapRaw(super.sub(value))
     }
 
     public mul(value: BigNumberish): this {
-        return this.wrap(super.mul(value), { ignoreDecimals: true })
+        return this.wrapRaw(super.mul(value))
     }
 
     public div(value: BigNumberish): this {
-        return this.wrap(super.div(value), { ignoreDecimals: true })
+        return this.wrapRaw(super.div(value))
     }
 
     public abs(): this {
-        return this.wrap(super.abs(), { ignoreDecimals: true })
+        return this.wrapRaw(super.abs())
     }
 
     /* util */
 
     public connect(owner: Owner) {
-        return this.wrap(this, { owner })
+        return this.wrapRaw(this, { owner })
     }
 
     public from(owner: Owner) {
@@ -94,8 +94,12 @@ export class Fungible extends BigNumber {
             value,
             {
                 owner: this.owner,
-                ...(config || {}),
+                ...(config ?? {}),
             },
         ])
+    }
+
+    protected wrapRaw(value: BigNumberish, config?: FungibleConfig): this {
+        return this.wrap(value, { ...(config ?? {}), ignoreDecimals: true })
     }
 }
