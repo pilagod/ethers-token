@@ -49,29 +49,29 @@ export class Fungible extends BigNumber {
     /* big number */
 
     public add(value: BigNumberish): this {
-        return this.wrapRaw(super.add(value))
+        return this.wrap(super.add(value), { ignoreDecimals: true })
     }
 
     public sub(value: BigNumberish): this {
-        return this.wrapRaw(super.sub(value))
+        return this.wrap(super.sub(value), { ignoreDecimals: true })
     }
 
     public mul(value: BigNumberish): this {
-        return this.wrapRaw(super.mul(value))
+        return this.wrap(super.mul(value), { ignoreDecimals: true })
     }
 
     public div(value: BigNumberish): this {
-        return this.wrapRaw(super.div(value))
+        return this.wrap(super.div(value), { ignoreDecimals: true })
     }
 
     public abs(): this {
-        return this.wrapRaw(super.abs())
+        return this.wrap(super.abs(), { ignoreDecimals: true })
     }
 
     /* util */
 
     public connect(owner: Owner) {
-        return this.wrapRaw(this, { owner })
+        return this.wrap(this, { owner, ignoreDecimals: true })
     }
 
     public from(owner: Owner) {
@@ -104,9 +104,5 @@ export class Fungible extends BigNumber {
                 ...(config ?? {}),
             },
         ])
-    }
-
-    protected wrapRaw(value: BigNumberish, config?: FungibleConfig): this {
-        return this.wrap(value, { ...(config ?? {}), ignoreDecimals: true })
     }
 }
