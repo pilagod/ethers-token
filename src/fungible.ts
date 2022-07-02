@@ -14,6 +14,13 @@ export class Fungible extends BigNumber {
 
     private owner?: Owner
 
+    public static raw<T extends Fungible>(
+        this: new (value: BigNumberish, config?: FungibleConfig) => T,
+        value: BigNumberish,
+    ) {
+        return new this(value, { ignoreDecimals: true })
+    }
+
     // @ts-ignore
     public constructor(value: BigNumberish, config: FungibleConfig = {}) {
         const self = Object.create(new.target.prototype) as Fungible

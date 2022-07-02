@@ -28,6 +28,13 @@ describe("Fungible", () => {
         expect(t3).to.equal(ethers.utils.parseUnits("123.456", TKN.decimals))
     })
 
+    it("should not translate decimals by raw", () => {
+        const t = TKN.raw(100)
+
+        expect(t).to.be.instanceOf(TKN)
+        expect(t).to.equal(BigNumber.from(100))
+    })
+
     it("should support arithmetic", () => {
         const t = new TKN(100)
 
