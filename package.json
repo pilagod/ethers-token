@@ -1,17 +1,22 @@
 {
     "name": "ethers-token",
     "version": "0.0.0",
-    "description": "A token util for ethers",
     "author": "Cyan Ho <pilagooood@gmail.com>",
+    "description": "A token util based on ethers",
+    "keywords": ["ethers", "token", "ethers-token"],
     "homepage": "https://github.com/pilagod/ethers-token",
+    "license": "MIT",
+    "files": ["dist"],
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
     "repository": {
         "type": "git",
         "url": "https://github.com/pilagod/ethers-token"
     },
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "build": "tsc -p ./tsconfig.build.json",
+        "test": "hardhat test"
     },
-    "license": "MIT",
     "devDependencies": {
         "@nomiclabs/hardhat-ethers": "^2.0.6",
         "@nomiclabs/hardhat-waffle": "^2.0.3",
@@ -33,5 +38,8 @@
         "ts-node": "^10.8.1",
         "tsconfig-paths": "^4.0.0",
         "typescript": "^4.7.4"
+    },
+    "peerDependencies": {
+        "ethers": "^5.0.0"
     }
 }
