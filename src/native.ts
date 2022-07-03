@@ -1,4 +1,5 @@
 import { Provider } from "@ethersproject/abstract-provider"
+
 import { Addressable, getAddress } from "./address"
 import { Fungible } from "./fungible"
 
@@ -18,15 +19,7 @@ export class Native extends Fungible {
         target: Addressable,
     ): Promise<InstanceType<T>> {
         const balance = await this.provider.getBalance(await getAddress(target))
-        return new this(balance, { ignoreDecimals: true }) as InstanceType<T>
-    }
-
-    public get address(): string {
-        return this.ctor().address
-    }
-
-    public get provider(): Provider {
-        return this.ctor().provider
+        return this.raw(balance) as InstanceType<T>
     }
 
     public async transferTo(recipient: Addressable) {

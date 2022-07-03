@@ -28,15 +28,6 @@ describe("Native", () => {
         expect(ETH.provider).to.equal(ethers.provider)
     })
 
-    it("should be able to access config on instance", () => {
-        const e = ETH(0)
-
-        expect(e.address).to.equal(ETHConfig.address)
-        expect(e.decimals).to.equal(ETHConfig.decimals)
-        expect(e.symbol).to.equal(ETHConfig.symbol)
-        expect(e.provider).to.equal(ethers.provider)
-    })
-
     describe("Blockchain Interaction", () => {
         describe("transfer", () => {
             it("should transfer from connected owner to recipient", async () => {

@@ -14,11 +14,11 @@ export class Fungible extends BigNumber {
 
     private owner?: Owner
 
-    public static raw<T extends Fungible>(
-        this: new (value: BigNumberish, config?: FungibleConfig) => T,
+    public static raw<T extends typeof Fungible>(
+        this: T,
         value: BigNumberish,
-    ) {
-        return new this(value, { ignoreDecimals: true })
+    ): InstanceType<T> {
+        return new this(value, { ignoreDecimals: true }) as InstanceType<T>
     }
 
     // @ts-ignore
@@ -27,7 +27,7 @@ export class Fungible extends BigNumber {
 
         const bn = ethers.utils.parseUnits(
             value.toString(),
-            config.ignoreDecimals ? 0 : self.decimals,
+            config.ignoreDecimals ? 0 : self.ctor<typeof Fungible>().decimals,
         )
         Object.assign(self, bn)
 
@@ -36,14 +36,6 @@ export class Fungible extends BigNumber {
         }
 
         return self
-    }
-
-    public get decimals(): number {
-        return this.ctor().decimals
-    }
-
-    public get symbol(): string {
-        return this.ctor().symbol
     }
 
     /* big number */
@@ -92,7 +84,7 @@ export class Fungible extends BigNumber {
 
     /* protected */
 
-    protected ctor(): typeof this {
+    protected ctor<T>(): T {
         return this.constructor as any
     }
 
