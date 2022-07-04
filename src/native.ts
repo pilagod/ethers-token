@@ -7,7 +7,6 @@ export type NativeConfig = {
     address: string
     decimals: number
     symbol: string
-    provider: Provider
 }
 
 export class Native extends Fungible {
