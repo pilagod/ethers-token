@@ -34,7 +34,7 @@ describe("Native", () => {
                 const [vault] = await ethers.getSigners()
                 const user = ethers.Wallet.createRandom()
 
-                await ETH(10).from(vault).transferTo(user)
+                await ETH(10).from(vault).transfer(user)
 
                 const balance = await ETH.balanceOf(user)
                 expect(balance).to.equal(ETH(10))

@@ -22,7 +22,7 @@ export class Native extends Fungible {
         return this.raw(balance) as InstanceType<T>
     }
 
-    public async transferTo(recipient: Addressable) {
+    public async transfer(recipient: Addressable) {
         const owner = this.mustGetOwner()
         return owner.sendTransaction({
             to: await getAddress(recipient),
