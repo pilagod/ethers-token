@@ -3,10 +3,16 @@
     "version": "0.0.0",
     "author": "Cyan Ho <pilagooood@gmail.com>",
     "description": "A token util based on ethers",
-    "keywords": ["ethers", "token", "ethers-token"],
+    "keywords": [
+        "ethers",
+        "token",
+        "ethers-token"
+    ],
     "homepage": "https://github.com/pilagod/ethers-token",
     "license": "MIT",
-    "files": ["dist"],
+    "files": [
+        "dist"
+    ],
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "repository": {
@@ -15,6 +21,7 @@
     },
     "scripts": {
         "build": "tsc -p ./tsconfig.build.json",
+        "lint": "eslint --ignore-path .prettierignore \"./**/*.ts\" && prettier --check .",
         "test": "hardhat test"
     },
     "devDependencies": {
@@ -30,7 +37,6 @@
         "dotenv": "^16.0.1",
         "eslint": "^8.18.0",
         "eslint-config-prettier": "^8.5.0",
-        "eslint-plugin-prettier": "^4.0.0",
         "ethereum-waffle": "^3.4.4",
         "ethers": "^5.6.9",
         "hardhat": "^2.9.9",

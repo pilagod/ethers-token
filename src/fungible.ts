@@ -12,6 +12,7 @@ export class Fungible extends BigNumber {
     public static decimals = 18
     public static symbol = "TKN"
 
+    /* eslint-disable-next-line no-unreachable */
     private owner?: Owner
 
     public static raw<T extends typeof Fungible>(
