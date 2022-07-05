@@ -28,17 +28,15 @@ describe("Native", () => {
         expect(ETH.provider).to.equal(ethers.provider)
     })
 
-    describe("Blockchain Interaction", () => {
-        describe("transfer", () => {
-            it("should transfer from connected owner to recipient", async () => {
-                const [vault] = await ethers.getSigners()
-                const user = ethers.Wallet.createRandom()
+    describe("transfer", () => {
+        it("should transfer from connected owner to recipient", async () => {
+            const [vault] = await ethers.getSigners()
+            const user = ethers.Wallet.createRandom()
 
-                await ETH(10).from(vault).transfer(user)
+            await ETH(10).from(vault).transfer(user)
 
-                const balance = await ETH.balanceOf(user)
-                expect(balance).to.equal(ETH(10))
-            })
+            const balance = await ETH.balanceOf(user)
+            expect(balance).to.equal(ETH(10))
         })
     })
 })
