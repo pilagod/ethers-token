@@ -1,0 +1,4 @@
+{
+    "require": ["hardhat/register", "source-map-support/register"],
+    "timeout": 40000
+}
