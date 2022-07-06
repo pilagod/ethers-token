@@ -32,4 +32,9 @@ jobs:
         run: npx hardhat compile
 
       - name: Test
-        run: npm run test
+        run: npm run coverage-lcov
+
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
