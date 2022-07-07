@@ -53,7 +53,7 @@ Token constructor is a functional constructor, which means it can be instantiate
 DAI(100).eq(ethers.utils.parseUnits("100", 18))
 
 // Support arithmetic
-DAI(100).add(DAI(50)) // DAI(200)
+DAI(100).add(DAI(50)) // DAI(150)
 DAI(100).sub(DAI(50)) // DAI(50)
 DAI(100).mul(2) // DAI(200)
 DAI(100).div(2) // DAI(50)
