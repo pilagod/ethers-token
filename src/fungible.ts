@@ -92,10 +92,7 @@ export class Fungible extends BigNumber {
     protected wrap(value: BigNumberish, config?: FungibleConfig): this {
         return Reflect.construct(this.constructor, [
             value,
-            {
-                owner: this.owner,
-                ...(config ?? {}),
-            },
+            Object.assign({ owner: this.owner }, config),
         ])
     }
 }

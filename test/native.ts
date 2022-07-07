@@ -2,7 +2,6 @@ import { expect } from "chai"
 import { ethers } from "hardhat"
 
 import { Factory } from "@src/factory"
-import { Native } from "@src/native"
 
 describe("Native", () => {
     const factory = Factory.use(ethers.provider)
@@ -13,20 +12,6 @@ describe("Native", () => {
         symbol: "ETH",
     }
     const ETH = factory.createNativeCtor(ETHConfig)
-
-    it("should be an instance of Native", () => {
-        const e = ETH(0)
-
-        expect(e).to.be.instanceOf(ETH)
-        expect(e).to.be.instanceOf(Native)
-    })
-
-    it("should be able to access config on ctor", () => {
-        expect(ETH.address).to.equal(ETHConfig.address)
-        expect(ETH.decimals).to.equal(ETHConfig.decimals)
-        expect(ETH.symbol).to.equal(ETHConfig.symbol)
-        expect(ETH.provider).to.equal(ethers.provider)
-    })
 
     describe("transfer", () => {
         it("should transfer from connected owner to recipient", async () => {
