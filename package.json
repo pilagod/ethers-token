@@ -4,8 +4,10 @@
     "author": "Cyan Ho <pilagooood@gmail.com>",
     "description": "A token util based on ethers.js to help developers code in a semantic manner",
     "keywords": [
+        "ethereum",
         "ethers",
         "token",
+        "erc20",
         "ethers-token"
     ],
     "homepage": "https://github.com/pilagod/ethers-token",
