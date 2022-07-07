@@ -1,6 +1,6 @@
 {
     "name": "ethers-token",
-    "version": "0.0.0",
+    "version": "0.0.1",
     "author": "Cyan Ho <pilagooood@gmail.com>",
     "description": "A token util based on ethers.js to help developers code in a semantic manner",
     "keywords": [
