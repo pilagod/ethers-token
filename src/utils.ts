@@ -9,15 +9,15 @@ export type CallifyCtor<
 
 export function callify<T extends new (...args: any[]) => any, S>(
     cls: T,
-    staticProps: S,
+    staticProps?: S,
 ): CallifyCtor<T, S> {
     const __ctor__ = function (...args: any[]) {
         return Reflect.construct(cls, args, __ctor__)
     }
     Reflect.setPrototypeOf(__ctor__.prototype, cls.prototype)
     Reflect.setPrototypeOf(__ctor__, cls)
-    if (staticProps) {
-        Object.assign(__ctor__, staticProps)
-    }
+
+    Object.assign(__ctor__, staticProps)
+
     return __ctor__ as CallifyCtor<T, S>
 }

@@ -30,7 +30,7 @@ class ERC20Mintable extends ERC20 {
     ]
 
     public mint() {
-        const { contract } = this.ctor<typeof ERC20>()
+        const { contract } = this.static<typeof ERC20>()
         return contract.connect(this.mustGetOwner()).mint(this)
     }
 }

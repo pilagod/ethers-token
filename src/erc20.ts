@@ -53,7 +53,7 @@ export class ERC20 extends Fungible {
     }
 
     public async approve(spender: Addressable): Promise<ContractTransaction> {
-        const { contract } = this.ctor<typeof ERC20>()
+        const { contract } = this.static<typeof ERC20>()
         return contract
             .connect(this.mustGetOwner())
             .approve(await getAddress(spender), this)
@@ -62,7 +62,7 @@ export class ERC20 extends Fungible {
     public async transfer(
         recipient: Addressable,
     ): Promise<ContractTransaction> {
-        const { contract } = this.ctor<typeof ERC20>()
+        const { contract } = this.static<typeof ERC20>()
         return contract
             .connect(this.mustGetOwner())
             .transfer(await getAddress(recipient), this)
@@ -72,7 +72,7 @@ export class ERC20 extends Fungible {
         owner: Addressable,
         recipient: Addressable,
     ): Promise<ContractTransaction> {
-        const { contract } = this.ctor<typeof ERC20>()
+        const { contract } = this.static<typeof ERC20>()
         return contract
             .connect(this.mustGetOwner())
             .transferFrom(

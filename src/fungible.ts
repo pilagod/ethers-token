@@ -28,7 +28,7 @@ export class Fungible extends BigNumber {
 
         const bn = ethers.utils.parseUnits(
             value.toString(),
-            config.ignoreDecimals ? 0 : self.ctor<typeof Fungible>().decimals,
+            config.ignoreDecimals ? 0 : self.static<typeof Fungible>().decimals,
         )
         Object.assign(self, bn)
 
@@ -85,8 +85,8 @@ export class Fungible extends BigNumber {
 
     /* protected */
 
-    protected ctor<T>(): T {
-        return this.constructor as any
+    protected static<T>(): T {
+        return this.constructor as unknown as T
     }
 
     protected wrap(value: BigNumberish, config?: FungibleConfig): this {
